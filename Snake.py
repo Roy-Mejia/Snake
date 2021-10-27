@@ -51,14 +51,22 @@ def move():
 
     clear()
 
-    for body in snake:
-        square(body.x, body.y, 9, 'black')
 
-    square(food.x, food.y, 9, 'green')
+    for body in snake:
+        square(body.x, body.y, 9, color1)
+
+    square(food.x, food.y, 9, color2)
     update()
     ontimer(move, 100)
 
 
+color1=""
+color2=""
+while(color1==color2):
+    colores=["black", "green", "purple", "cyan", "yellow"]
+    color1=colores[randrange(0,5)]
+    color2=colores[randrange(0,5)]
+    
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
